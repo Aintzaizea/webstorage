@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1{
+    margin-bottom: 15px;
+}
+form {
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 7px;
+}
+
+button {
+    padding: 7px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #888181;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #a7a2a2;
+}

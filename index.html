@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webstorage</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    
+    <h1>Almacén de productos</h1>
+
+    <form id="miFormulario" novalidate>
+        <input type="text" id="nombreProducto" name="nombreProducto" placeholder="Nombre del producto" autocomplete="off">
+        <button type="submit" id="botonAgregar">Agregar producto</button>
+    </form>
+
+    <table id="tablaProductos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            <!-- Aquí se van a meter los productos que metamos desde el formulario -->
+        </tbody>
+    </table>
+
 
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
