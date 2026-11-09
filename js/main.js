@@ -3,7 +3,7 @@ const inputProducto = document.querySelector("#nombreProducto");
 const cuerpoTabla = document.querySelector("#cuerpoTabla");
 
 const leerLocalStorage = () => { //lee los productos guardados
-    return JSON.parse(localStorage.getItem("productos")) || [];
+    return JSON.parse(localStorage.getItem("productos")) || []; //si no está definido el array vacío nos devolvería NULL
 };
 
 let productos = leerLocalStorage(); // productos en memoria del localstorage
@@ -36,9 +36,8 @@ formulario.addEventListener("submit", (ev) => {
         return
     }
 
-    const articuloExistente = productos.find( //busca si hay alguno que coincida
-        (producto) => producto.nombre === nombreProducto
-    );
+    const articuloExistente = productos.find((producto) => producto.nombre.toLowerCase() === nombreProducto.toLowerCase()); //busca si hay alguno que coincida
+        
 
     if (articuloExistente) {
         articuloExistente.cantidad = articuloExistente.cantidad + 1;
@@ -48,7 +47,7 @@ formulario.addEventListener("submit", (ev) => {
     pintarTabla();
     guardarLocalStorage();
     inputProducto.value = ""; //actualiza y vacía el input
-    
+
 });
 
 cuerpoTabla.addEventListener("click", (ev) => {
@@ -57,8 +56,8 @@ cuerpoTabla.addEventListener("click", (ev) => {
 
     if (producto.cantidad > 1) { // hay más de uno? pues quitamos uno
         producto.cantidad = producto.cantidad - 1;
-    } else { 
-        productos.splice(Number(indice), 1); //solo queda uno? pues fuera, lo eliminamos
+    } else {
+        productos.splice(indice, 1); //solo queda uno? pues fuera, lo eliminamos
     }
 
     pintarTabla();
